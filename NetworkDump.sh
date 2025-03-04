@@ -1,10 +1,8 @@
-#This is a simple bash script which gathers information on the local networking stack of a Linux server.
-# Note that this requires net-tools to be installed.
-
 #!/bin/bash
 # Instructions:
 # Simply run the script, and the output will be saved to the current folder as NetworkInfo_[date].txt
-#Get the current date
+# Note that this requires net-tools to be installed.
+# Get the current date
 date=$(date +"%Y-%m-%d")
 #Set the file name for output
 filename="NetworkInfo_${date}.txt"
