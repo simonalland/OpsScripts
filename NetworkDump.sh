@@ -5,7 +5,8 @@
 # Get the current date
 date=$(date +"%Y-%m-%d")
 #Set the file name for output
-filename="NetworkInfo_${date}.txt"
+filename="/usr/scripts/output/NetworkInfo_${date}.txt"
+mkdir -p /usr/scripts/output/
 #Get hostname
 server=$(hostname)
 echo "Gathering network info.."
