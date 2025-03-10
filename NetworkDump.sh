@@ -1,6 +1,6 @@
 #!/bin/bash
 # Instructions:
-# Simply run the script, and the output will be saved to the current folder as NetworkInfo_[date].txt
+# Simply run the script, and the output will be saved to the /usr/scripts/output folder as NetworkInfo_[date].txt
 # Note that this requires net-tools to be installed.
 # Get the current date
 date=$(date +"%Y-%m-%d")
