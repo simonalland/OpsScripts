@@ -4,11 +4,11 @@
 date=$(date +"%Y-%m-%d")
 
 # Set the file name for output
-filename="/usr/scripts/output/suspiciouslogins_${date}.txt"
+filename="/usr/scripts/output/suspiciousloginsy_${date}.txt"
 mkdir -p /usr/scripts/output/
 
 # Define the user to monitor (in this case the Local Administrator on the machine)
-user="Admin"
+user="CIS245Admin"
 
 # Set suspicous hours range
 targetHourStart=0
@@ -21,9 +21,11 @@ awk -v user="$user" -v start="$targetHourStart" -v end="$targetHourEnd" '
    split($1, datetime, "T");
    split(datetime[2], time, ":");
    hour = time[1];
+   split($3, program, "[");
+   prog = program[1]
    entry = $12;
    log_user = $4;
 
-   if (hour >= start && hour < end || log_user == user) {print $1, $4, $12}
+   if (hour >= start && hour < end || log_user == user || prog == "sshd") {print $1, $4, $12}
  }
  ' "/var/log/auth.log" > $filename
